@@ -1,4 +1,4 @@
-import ManagementFace from "@/components/ManagementFace";
+import ManagementFace from "@/components/face/ManagementFace";
 import React, { useState, useEffect } from "react";
 
 const Face = () => {

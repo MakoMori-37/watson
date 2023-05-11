@@ -1,12 +1,5 @@
 import React from "react";
-
-const RenderFaceShop = () => {
-    return (
-        <div>
-            dsds
-        </div>
-    )
-}
+import FaceShop from "./FaceShop";
 
 const ManagementFace = () => {
   return (
@@ -16,7 +9,7 @@ const ManagementFace = () => {
         alt="logo"
         className="w-auto h-auto absolute object-contain top-5 right-2 "
       />
-      <RenderFaceShop/>
+      <FaceShop />
     </div>
   );
 };
