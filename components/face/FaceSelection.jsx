@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Foam from "./Foam/Foam";
-import Serum from "./Serum";
+import Serum from "./Serum/Serum";
 import Cream from "./Cream";
 import MakeUp from "./MakeUp";
 
