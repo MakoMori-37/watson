@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Foam from "./foam/Foam";
 import Serum from "./serum/Serum";
 import Cream from "./cream/Cream";
-import MakeUp from "./MakeUp";
+import MakeUp from "./makeUp/MakeUp";
 
 const RenderSelectd = (mode, section, onReset) => {
   switch (mode) {
