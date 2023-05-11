@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import FaceNpd from "../FaceNpd";
+const HOST = process.env.HOST;
 
 const RenderStep1 = ({ onNext = () => {} }) => {
   return (
     <div className="px-8 pt-20 h-screen " onClick={onNext}>
       <img
-        src="/image/face/section/4/title.png"
+        src={`${HOST}/image/face/section/4/title.png`}
         alt="title"
         className="w-[40%] h-auto mb-20 "
       />
       <img
-        src="/image/face/section/4/content.png"
+        src={`${HOST}/image/face/section/4/content.png`}
         alt="content"
         className="w-full h-auto"
       />
