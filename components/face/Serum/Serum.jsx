@@ -3,7 +3,6 @@ import React from "react";
 import SerumSection1 from "./SerumSection1";
 import SerumSection2 from "./SerumSection2";
 import SerumSection3 from "./SerumSection3";
-import SerumSection4 from "./SerumSection4";
 import SerumSection5 from "./SerumSection5";
 
 const Serum = ({ section = 0, onReset = () => {} }) => {
