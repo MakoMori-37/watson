@@ -12,9 +12,9 @@ const Serum = ({ section = 0, onReset = () => {} }) => {
       case 1:
         return <SerumSection1 onReset={onReset} />;
       case 2:
-        return <SerumSection2 section={section} onReset={onReset} />;
+        return <SerumSection2 onReset={onReset} />;
       case 3:
-        return <SerumSection3 />;
+        return <SerumSection3 onReset={onReset} />;
       case 4:
         return <SerumSection4 />;
       case 5:

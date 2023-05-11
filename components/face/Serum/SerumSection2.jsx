@@ -3,14 +3,14 @@ import FaceNpd from "../FaceNpd";
 
 const RenderStep1 = ({ onNext = () => {} }) => {
   return (
-    <div className="px-8 pt-20 h-screen " onClick={onNext}>
+    <div className="px-8 pt-28 h-screen " onClick={onNext}>
       <img
-        src="/image/face/section/1/1/title.png"
+        src="/image/face/section/2/1/title.png"
         alt="title"
         className="w-[70%] mb-20 "
       />
       <img
-        src="/image/face/section/1/1/content.png"
+        src="/image/face/section/2/1/content.png"
         alt="content"
         className="w-full h-auto"
       />
@@ -22,12 +22,12 @@ const RenderStep2 = ({ onNext = () => {} }) => {
   return (
     <div className="px-8 pt-20 h-screen" onClick={onNext}>
       <img
-        src="/image/face/section/1/2/title.png"
+        src="/image/face/section/2/2/title.png"
         alt="title"
         className="w-[50%] mb-20 "
       />
       <img
-        src="/image/face/section/1/2/content.png"
+        src="/image/face/section/2/2/content.png"
         alt="content"
         className="w-full h-auto"
       />

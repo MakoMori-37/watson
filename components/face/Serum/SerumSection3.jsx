@@ -5,12 +5,12 @@ const RenderStep1 = ({ onNext = () => {} }) => {
   return (
     <div className="px-8 pt-20 h-screen " onClick={onNext}>
       <img
-        src="/image/face/section/1/1/title.png"
+        src="/image/face/section/2/3/title.png"
         alt="title"
         className="w-[70%] mb-20 "
       />
       <img
-        src="/image/face/section/1/1/content.png"
+        src="/image/face/section/2/3/content.png"
         alt="content"
         className="w-full h-auto"
       />
@@ -22,12 +22,29 @@ const RenderStep2 = ({ onNext = () => {} }) => {
   return (
     <div className="px-8 pt-20 h-screen" onClick={onNext}>
       <img
-        src="/image/face/section/1/2/title.png"
+        src="/image/face/section/2/3/title_1.png"
         alt="title"
         className="w-[50%] mb-20 "
       />
       <img
-        src="/image/face/section/1/2/content.png"
+        src="/image/face/section/2/3/content_1.png"
+        alt="content"
+        className="w-full h-auto"
+      />
+    </div>
+  );
+};
+
+const RenderStep3 = ({ onNext = () => {} }) => {
+  return (
+    <div className="px-8 pt-20 h-screen" onClick={onNext}>
+      <img
+        src="/image/face/section/2/3/title_2.png"
+        alt="title"
+        className="w-[50%] mb-20 "
+      />
+      <img
+        src="/image/face/section/2/3/content_2.png"
         alt="content"
         className="w-full h-auto"
       />
@@ -48,6 +65,8 @@ const SerumSection3 = ({ onReset = () => {} }) => {
         <RenderStep1 onNext={incrementStep} />
       ) : step === 2 ? (
         <RenderStep2 onNext={incrementStep} />
+      ) : step === 3 ? (
+        <RenderStep3 onNext={incrementStep} />
       ) : (
         <FaceNpd onReset={onReset} />
       )}
