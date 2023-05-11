@@ -6,11 +6,11 @@ import FoamSection3 from "./FoamSection3";
 import FoamSection4 from "./FoamSection4";
 import FoamSection5 from "./FoamSection5";
 
-const Foam = ({ section = 0 }) => {
+const Foam = ({ section = 0, onReset = () => {} }) => {
   const renderPage = () => {
     switch (section) {
       case 1:
-        return <FoamSection1 />;
+        return <FoamSection1 onReset={onReset} />;
       case 2:
         return <FoamSection2 />;
       case 3:

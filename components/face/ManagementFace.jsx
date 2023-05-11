@@ -24,7 +24,7 @@ const ManagementFace = () => {
       {section === 0 ? (
         <FaceShop onUpdate={handleChangeSection} />
       ) : (
-        <FaceSelection section={section} />
+        <FaceSelection section={section} onReset={handleResetSection} />
       )}
     </div>
   );

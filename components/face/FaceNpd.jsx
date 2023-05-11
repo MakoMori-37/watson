@@ -1,9 +1,111 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 
-const FaceNpd = () => {
+const RenderStep1 = ({ onNext = () => {} }) => {
   return (
-    <div>FaceNpd</div>
-  )
-}
+    <div className="px-8 pt-20 h-screen" onClick={onNext}>
+      <img
+        src="/image/face/npd/npd_1.png"
+        alt="title"
+        className="w-full h-auto mb-20 "
+      />
+    </div>
+  );
+};
+const RenderStep2 = ({ onNext = () => {} }) => {
+  return (
+    <div className="px-8 pt-20 h-screen" onClick={onNext}>
+      <img
+        src="/image/face/npd/npd_2.png"
+        alt="title"
+        className="w-full h-auto mb-20 "
+      />
+    </div>
+  );
+};
+const RenderStep3 = ({ onNext = () => {} }) => {
+  return (
+    <div className="px-8 pt-20 h-screen w-full bg__twotone " onClick={onNext}>
+      <img
+        src="/image/face/npd/npd_3.png"
+        alt="title"
+        className="w-full h-auto mb-20 "
+      />
+    </div>
+  );
+};
+const RenderStep4 = ({ onNext = () => {} }) => {
+  return (
+    <div className="px-8 pt-20 h-screen w-full bg__twotone" onClick={onNext}>
+      <img
+        src="/image/face/npd/npd_4.png"
+        alt="title"
+        className="w-full h-auto mb-20 "
+      />
+    </div>
+  );
+};
+const RenderStep5 = ({ onNext = () => {} }) => {
+  return (
+    <div className="px-8 pt-20 h-screen" onClick={onNext}>
+      <img
+        src="/image/face/npd/npd_5.png"
+        alt="title"
+        className="w-full h-auto mb-20 "
+      />
+    </div>
+  );
+};
+const RenderStep6 = () => {
+  return (
+    <div className="px-8 pt-20 h-screen">
+      <img
+        src="/image/face/npd/npd_6.png"
+        alt="title"
+        className="w-full h-auto mb-20 "
+      />
+    </div>
+  );
+};
 
-export default FaceNpd
+const FaceNpd = ({ onReset = {} }) => {
+  const [step, setStep] = useState(1);
+
+  const incrementStep = () => {
+    setStep(step + 1);
+  };
+
+  useEffect(() => {
+    if (step === 6) {
+      const timeout = setTimeout(() => {
+        onReset();
+      }, 6000);
+
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [step]);
+
+  const renderPage = () => {
+    switch (step) {
+      case 1:
+        return <RenderStep1 onNext={incrementStep} />;
+      case 2:
+        return <RenderStep2 onNext={incrementStep} />;
+      case 3:
+        return <RenderStep3 onNext={incrementStep} />;
+      case 4:
+        return <RenderStep4 onNext={incrementStep} />;
+      case 5:
+        return <RenderStep5 onNext={incrementStep} />;
+      case 6:
+        return <RenderStep6 />;
+      default:
+        return <div></div>;
+    }
+  };
+
+  return <div className="h-screen w-full ">{renderPage()}</div>;
+};
+
+export default FaceNpd;

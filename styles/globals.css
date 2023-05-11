@@ -46,6 +46,13 @@ body {
   background-position: center;
 }
 
+.bg__twotone {
+  background-image: url("../public/image/bg_twotone.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .main {
   overflow-x: auto;
   overflow-y: hidden;

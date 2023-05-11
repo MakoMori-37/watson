@@ -5,10 +5,10 @@ import Serum from "./Serum";
 import Cream from "./Cream";
 import MakeUp from "./MakeUp";
 
-const RenderSelectd = (mode, section) => {
+const RenderSelectd = (mode, section, onReset) => {
   switch (mode) {
     case 1:
-      return <Foam section={section} />;
+      return <Foam section={section} onReset={onReset} />;
     case 2:
       return <Serum section={section} />;
     case 3:
@@ -46,7 +46,7 @@ const RenderSelectionTools = ({ onUpdate = () => {}, title = "" }) => {
   );
 };
 
-const FaceSelection = ({ section = 0 }) => {
+const FaceSelection = ({ section = 0, onReset = () => {} }) => {
   const [mode, setMode] = useState(0);
 
   const handleChangeMode = (data) => {
@@ -62,7 +62,7 @@ const FaceSelection = ({ section = 0 }) => {
       {mode === 0 ? (
         <RenderSelectionTools onUpdate={handleChangeMode} />
       ) : (
-        RenderSelectd(mode, section)
+        RenderSelectd(mode, section, onReset)
       )}
     </div>
   );

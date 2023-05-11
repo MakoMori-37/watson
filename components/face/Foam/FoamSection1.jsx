@@ -3,7 +3,7 @@ import FaceNpd from "../FaceNpd";
 
 const RenderStep1 = ({ onNext = () => {} }) => {
   return (
-    <div className="px-8 pt-20" onClick={onNext}>
+    <div className="px-8 pt-20 h-screen " onClick={onNext}>
       <img
         src="/image/face/section/1/1/title.png"
         alt="title"
@@ -20,7 +20,7 @@ const RenderStep1 = ({ onNext = () => {} }) => {
 
 const RenderStep2 = ({ onNext = () => {} }) => {
   return (
-    <div className="px-8 pt-20" onClick={onNext}>
+    <div className="px-8 pt-20 h-screen" onClick={onNext}>
       <img
         src="/image/face/section/1/2/title.png"
         alt="title"
@@ -35,7 +35,7 @@ const RenderStep2 = ({ onNext = () => {} }) => {
   );
 };
 
-const FoamSection1 = () => {
+const FoamSection1 = ({ onReset = () => {} }) => {
   const [step, setStep] = useState(1);
 
   const incrementStep = () => {
@@ -49,7 +49,7 @@ const FoamSection1 = () => {
       ) : step === 2 ? (
         <RenderStep2 onNext={incrementStep} />
       ) : (
-        <FaceNpd />
+        <FaceNpd onReset={onReset} />
       )}
     </div>
   );
