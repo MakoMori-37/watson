@@ -3,7 +3,7 @@ import FaceShop from "./FaceShop";
 import FaceSelection from "./FaceSelection";
 
 const ManagementFace = () => {
-  const [section, setSection] = useState(1); //1-5
+  const [section, setSection] = useState(0); //1-5
 
   const handleChangeSection = (data) => {
     setSection(data);
@@ -14,7 +14,7 @@ const ManagementFace = () => {
   };
 
   return (
-    <div className="bg__default w-full h-screen relative">
+    <div className="bg__default w-full h-screen relative z-50 ">
       <img
         src="/image/logo.webp"
         alt="logo"
@@ -24,7 +24,7 @@ const ManagementFace = () => {
       {section === 0 ? (
         <FaceShop onUpdate={handleChangeSection} />
       ) : (
-        <FaceSelection />
+        <FaceSelection section={section} />
       )}
     </div>
   );
