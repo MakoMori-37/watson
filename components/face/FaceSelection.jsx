@@ -20,7 +20,7 @@ const RenderSelectd = (mode, section, onReset) => {
   }
 };
 
-const RenderSelectionTools = ({ onUpdate = () => {}, title = "" }) => {
+const RenderSelectionTools = ({ onUpdate = () => {}, section = 0 }) => {
   return (
     <>
       <div className="flex items-center justify-evenly w-full ">
@@ -32,10 +32,13 @@ const RenderSelectionTools = ({ onUpdate = () => {}, title = "" }) => {
         </div>
       </div>
       <div className="m-[-75px] z-50  w-48 h-48 bg-red-500 justify-center items-center flex rounded-full text-lg font-bold ">
-        Set {title}
+        Set
       </div>
       <div className="flex items-center justify-evenly w-full z-0">
-        <div className="box__selection" onClick={() => onUpdate(3)}>
+        <div
+          className={`${section !== 1 ? "box__disabled" : "box__selection"}`}
+          onClick={section !== 1 ? null : () => onUpdate(3)}
+        >
           ครีมบำรุง
         </div>
         <div className="box__selection" onClick={() => onUpdate(4)}>
@@ -60,7 +63,7 @@ const FaceSelection = ({ section = 0, onReset = () => {} }) => {
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center">
       {mode === 0 ? (
-        <RenderSelectionTools onUpdate={handleChangeMode} />
+        <RenderSelectionTools onUpdate={handleChangeMode} section={section} />
       ) : (
         RenderSelectd(mode, section, onReset)
       )}

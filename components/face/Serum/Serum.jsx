@@ -16,7 +16,7 @@ const Serum = ({ section = 0, onReset = () => {} }) => {
       case 3:
         return <SerumSection3 onReset={onReset} />;
       case 4:
-        return <SerumSection4 />;
+        return <SerumSection3 onReset={onReset} />;
       case 5:
         return <SerumSection5 />;
       default:

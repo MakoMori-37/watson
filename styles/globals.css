@@ -6,6 +6,9 @@
   .box__selection {
     @apply w-96 h-48 bg-red-300 rounded-xl flex items-center justify-center text-xl font-bold ;
   }
+  .box__disabled {
+    @apply w-96 h-48 bg-gray-400 rounded-xl flex items-center justify-center text-xl font-bold ;
+  }
 }
 
 :root {
