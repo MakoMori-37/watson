@@ -8,9 +8,9 @@ import MakeUp from "./MakeUp";
 const RenderSelectd = (mode, section, onReset) => {
   switch (mode) {
     case 1:
-      return <Foam section={section} onReset={onReset} />;
+      return <Foam onReset={onReset} />;
     case 2:
-      return <Serum section={section} />;
+      return <Serum section={section} onReset={onReset} />;
     case 3:
       return <Cream section={section} />;
     case 4:
