@@ -35,7 +35,7 @@ const RenderStep2 = ({ onNext = () => {} }) => {
   );
 };
 
-const FoamSection1 = ({ onReset = () => {} }) => {
+const FoamSection = ({ onReset = () => {} }) => {
   const [step, setStep] = useState(1);
 
   const incrementStep = () => {
@@ -55,4 +55,4 @@ const FoamSection1 = ({ onReset = () => {} }) => {
   );
 };
 
-export default FoamSection1;
+export default FoamSection;

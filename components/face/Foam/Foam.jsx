@@ -1,30 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
+import FaceNpd from "../FaceNpd";
 
-import FoamSection1 from "./FoamSection1";
-import FoamSection2 from "./FoamSection2";
-import FoamSection3 from "./FoamSection3";
-import FoamSection4 from "./FoamSection4";
-import FoamSection5 from "./FoamSection5";
+const RenderStep1 = ({ onNext = () => {} }) => {
+  return (
+    <div className="px-8 pt-20 h-screen " onClick={onNext}>
+      <img
+        src="/image/face/section/1/1/title.png"
+        alt="title"
+        className="w-[70%] mb-20 "
+      />
+      <img
+        src="/image/face/section/1/1/content.png"
+        alt="content"
+        className="w-full h-auto"
+      />
+    </div>
+  );
+};
 
-const Foam = ({ section = 0, onReset = () => {} }) => {
-  const renderPage = () => {
-    switch (section) {
-      case 1:
-        return <FoamSection1 onReset={onReset} />;
-      case 2:
-        return <FoamSection2 />;
-      case 3:
-        return <FoamSection3 />;
-      case 4:
-        return <FoamSection4 />;
-      case 5:
-        return <FoamSection5 />;
-      default:
-        return <div></div>;
-    }
+const RenderStep2 = ({ onNext = () => {} }) => {
+  return (
+    <div className="px-8 pt-20 h-screen" onClick={onNext}>
+      <img
+        src="/image/face/section/1/2/title.png"
+        alt="title"
+        className="w-[50%] mb-20 "
+      />
+      <img
+        src="/image/face/section/1/2/content.png"
+        alt="content"
+        className="w-full h-auto"
+      />
+    </div>
+  );
+};
+
+const Foam = ({ onReset = () => {} }) => {
+  const [step, setStep] = useState(1);
+
+  const incrementStep = () => {
+    setStep(step + 1);
   };
 
-  return <div>{renderPage()}</div>;
+  return (
+    <div className="z-20 w-full h-screen">
+      {step === 1 ? (
+        <RenderStep1 onNext={incrementStep} />
+      ) : step === 2 ? (
+        <RenderStep2 onNext={incrementStep} />
+      ) : (
+        <FaceNpd onReset={onReset} />
+      )}
+    </div>
+  );
 };
 
 export default Foam;
