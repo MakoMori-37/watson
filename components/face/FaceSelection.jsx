@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Foam from "./Foam/Foam";
 import Serum from "./Serum/Serum";
-import Cream from "./Cream";
+import Cream from "./Cream/Cream";
 import MakeUp from "./MakeUp";
 
 const RenderSelectd = (mode, section, onReset) => {
@@ -12,7 +12,7 @@ const RenderSelectd = (mode, section, onReset) => {
     case 2:
       return <Serum section={section} onReset={onReset} />;
     case 3:
-      return <Cream section={section} />;
+      return <Cream onReset={onReset} />;
     case 4:
       return <MakeUp section={section} />;
     default:
