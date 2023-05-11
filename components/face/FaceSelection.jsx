@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import Foam from "./Foam/Foam";
-import Serum from "./Serum/Serum";
-import Cream from "./Cream/Cream";
+import Foam from "./foam/Foam";
+import Serum from "./serum/Serum";
+import Cream from "./cream/Cream";
 import MakeUp from "./MakeUp";
 
 const RenderSelectd = (mode, section, onReset) => {
