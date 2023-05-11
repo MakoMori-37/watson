@@ -1,6 +1,6 @@
 import React from "react";
 
-const FaceShop = () => {
+const FaceShop = ({ onUpdate = () => {} }) => {
   return (
     <div className="p-6 w-full space-y-2 ">
       <img
@@ -98,26 +98,31 @@ const FaceShop = () => {
           src="/image/face/shop/boxLeft/need_1.png"
           alt="need_1"
           className="w-full h-16 object-contain"
+          onClick={() => onUpdate(1)}
         />
         <img
           src="/image/face/shop/boxLeft/need_2.png"
           alt="need_2"
           className="w-full h-16 object-contain"
+          onClick={() => onUpdate(2)}
         />
         <img
           src="/image/face/shop/boxRight/need_1.png"
           alt="need_1"
           className="w-full h-16 object-contain "
+          onClick={() => onUpdate(3)}
         />
         <img
           src="/image/face/shop/boxRight/need_2.png"
           alt="need_2"
           className="w-full h-16 object-contain "
+          onClick={() => onUpdate(4)}
         />
         <img
           src="/image/face/shop/boxRight/need_3.png"
           alt="need_3"
           className="w-full h-16 object-contain"
+          onClick={() => onUpdate(5)}
         />
       </div>
       {/* คุณสมบัตรเพิ่มเติม */}

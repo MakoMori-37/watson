@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .box__selection {
+    @apply w-96 h-48 bg-red-300 rounded-xl flex items-center justify-center text-xl font-bold ;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
