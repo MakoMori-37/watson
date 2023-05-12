@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from "react";
-import VaselineSet1 from "../vaseline/VaselineSet1";
+import React, { useState } from "react";
+import Vaseline from "../vaseline/Vaseline";
 import Citra from "../citra/Citra";
 const HOST = process.env.HOST;
 
 const RenderStep1 = ({ onNext = () => {} }) => {
   return (
-    <div className="p-24 h-screen " onClick={onNext}>
+    <div
+      className="p-16 pt-24 flex flex-col items-center h-screen "
+      onClick={onNext}
+    >
       <img
-        src={`${HOST}/image/body/brightening/title.webp`}
+        src={`${HOST}/image/body/moisture/title.webp`}
         alt="title"
-        className="w-[70%] mb-20 "
+        className="w-[70%] mb-8"
       />
       <img
-        src={`${HOST}/image/body/brightening/content.webp`}
+        src={`${HOST}/image/body/moisture/content.webp`}
         alt="content"
-        className="w-full h-auto"
+        className="w-[90%] h-auto"
       />
     </div>
   );
@@ -32,7 +35,7 @@ const MoistureSection = ({ onReset = () => {} }) => {
       case 1:
         return <RenderStep1 onNext={incrementStep} />;
       case 2:
-        return <VaselineSet1 onUpdateSection={incrementStep} />;
+        return <Vaseline onUpdateSection={incrementStep} isSection3={true} />;
       case 3:
         return <Citra onReset={onReset} />;
       default:

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import VaselineSet1 from "../vaseline/VaselineSet1";
+import React, { useState } from "react";
+import Vaseline from "../vaseline/Vaseline";
 import Citra from "../citra/Citra";
 const HOST = process.env.HOST;
 
@@ -9,7 +9,7 @@ const RenderStep1 = ({ onNext = () => {} }) => {
       <img
         src={`${HOST}/image/body/brightening/title.webp`}
         alt="title"
-        className="w-[70%] mb-20 "
+        className="w-[70%] mb-8 "
       />
       <img
         src={`${HOST}/image/body/brightening/content.webp`}
@@ -32,7 +32,7 @@ const BrighteningSection = ({ onReset = () => {} }) => {
       case 1:
         return <RenderStep1 onNext={incrementStep} />;
       case 2:
-        return <VaselineSet1 onUpdateSection={incrementStep} />;
+        return <Vaseline onUpdateSection={incrementStep} />;
       case 3:
         return <Citra onReset={onReset} />;
       default:

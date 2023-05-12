@@ -20,7 +20,7 @@ const RenderSelectd = (section, onReset) => {
 
 const ManagementBody = () => {
   const [section, setSection] = useState(0); //1-4
-  console.log(section);
+
   const handleChangeSection = (data) => {
     setSection(data);
   };
