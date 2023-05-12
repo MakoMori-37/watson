@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import BodyShop from "./BodyShop";
 import SunProtect from "./sunProtect/SunProtect";
+import Brightening from "./brightening/Brightening";
 const HOST = process.env.HOST;
 
 const RenderSelectd = (section, onReset) => {
   switch (section) {
     case 1:
       return <SunProtect onReset={onReset} />;
-    // case 2:
-    //   return <Serum section={section} onReset={onReset} />;
+    case 2:
+      return <Brightening onReset={onReset} />;
     // case 3:
     //   return <Cream onReset={onReset} />;
     // case 4:
