@@ -37,7 +37,7 @@ const RenderStep3 = ({ onNext = () => {} }) => {
       onClick={onNext}
     >
       <img
-        src={`${HOST}/image/body/sunProtect/content_3.png`}
+        src={`${HOST}/image/body/sunProtect/content_3.webp`}
         alt="content"
         className="w-full"
       />
