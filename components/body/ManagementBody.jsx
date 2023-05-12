@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import BodyShop from "./BodyShop";
+import SunProtect from "./sunProtect/SunProtect";
 const HOST = process.env.HOST;
 
-const RenderSelectd = (mode, section, onReset) => {
-  switch (mode) {
-    // case 1:
-    //   return <Foam onReset={onReset} />;
+const RenderSelectd = (section, onReset) => {
+  switch (section) {
+    case 1:
+      return <SunProtect onReset={onReset} />;
     // case 2:
     //   return <Serum section={section} onReset={onReset} />;
     // case 3:
@@ -13,13 +14,13 @@ const RenderSelectd = (mode, section, onReset) => {
     // case 4:
     //   return <MakeUp section={section} onReset={onReset} />;
     default:
-      return <div>red</div>;
+      return <div></div>;
   }
 };
 
 const ManagementBody = () => {
   const [section, setSection] = useState(0); //1-4
-
+  console.log(section);
   const handleChangeSection = (data) => {
     setSection(data);
   };
@@ -39,7 +40,7 @@ const ManagementBody = () => {
       {section === 0 ? (
         <BodyShop onUpdate={handleChangeSection} />
       ) : (
-        RenderSelectd()
+        RenderSelectd(section, handleResetSection)
       )}
     </div>
   );
