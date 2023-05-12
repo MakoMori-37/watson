@@ -5,6 +5,8 @@ import Serum from "./serum/Serum";
 import Cream from "./cream/Cream";
 import MakeUp from "./makeUp/MakeUp";
 
+const HOST = process.env.HOST;
+
 const RenderSelectd = (mode, section, onReset) => {
   switch (mode) {
     case 1:
@@ -21,28 +23,68 @@ const RenderSelectd = (mode, section, onReset) => {
 };
 
 const RenderSelectionTools = ({ onUpdate = () => {}, section = 0 }) => {
+  const imageCream =
+    section !== 1
+      ? `${HOST}/image/face/section/cream_disabled.webp`
+      : `${HOST}/image/face/section/cream.webp`;
+
+  let imageExplain;
+
+  switch (section) {
+    case 1:
+      imageExplain = `${HOST}/image/face/section/explain_1.webp`;
+      break;
+    case 2:
+      imageExplain = `${HOST}/image/face/section/explain_2.webp`;
+      break;
+    case 3:
+      imageExplain = `${HOST}/image/face/section/explain_3.webp`;
+      break;
+    case 4:
+      imageExplain = `${HOST}/image/face/section/explain_4.webp`;
+      break;
+    case 5:
+      imageExplain = `${HOST}/image/face/section/explain_5.webp`;
+      break;
+
+    default:
+      break;
+  }
+
   return (
     <>
       <div className="flex items-center justify-evenly w-full ">
         <div className="box__selection" onClick={() => onUpdate(1)}>
-          โฟม
+          <img
+            src={`${HOST}/image/face/section/foam.webp`}
+            alt="foam"
+            className="w-full h-auto"
+          />
         </div>
         <div className="box__selection" onClick={() => onUpdate(2)}>
-          เซรั่ม
+          <img
+            src={`${HOST}/image/face/section/serum.webp`}
+            alt="serum"
+            className="w-full h-auto"
+          />
         </div>
       </div>
-      <div className="m-[-75px] z-50  w-48 h-48 bg-red-500 justify-center items-center flex rounded-full text-lg font-bold ">
-        Set
+      <div className="box__explain">
+        <img src={imageExplain} alt="explain" className="w-full h-auto" />
       </div>
       <div className="flex items-center justify-evenly w-full z-0">
         <div
-          className={`${section !== 1 ? "box__disabled" : "box__selection"}`}
+          className={`box__selection`}
           onClick={section !== 1 ? null : () => onUpdate(3)}
         >
-          ครีมบำรุง
+          <img src={imageCream} alt="cream" className="w-full h-auto -z-10 " />
         </div>
         <div className="box__selection" onClick={() => onUpdate(4)}>
-          เมคอัพ
+          <img
+            src={`${HOST}/image/face/section/make_up.webp`}
+            alt="make_up"
+            className="w-full h-auto"
+          />
         </div>
       </div>
     </>
