@@ -58,11 +58,11 @@ const RenderStep4 = ({ onNext = () => {} }) => {
 };
 const RenderStep5 = ({ onNext = () => {} }) => {
   return (
-    <div className="px-8 pt-20 h-screen" onClick={onNext}>
+    <div className="w-full h-screen pl-10" onClick={onNext}>
       <img
         src={`${HOST}/image/face/npd/npd_5.webp`}
         alt="title"
-        className="w-full h-auto mb-20 "
+        className="w-full h-full"
       />
     </div>
   );

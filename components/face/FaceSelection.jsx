@@ -98,10 +98,6 @@ const FaceSelection = ({ section = 0, onReset = () => {} }) => {
     setMode(data);
   };
 
-  const handleResetMode = () => {
-    setMode(0);
-  };
-
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center">
       {mode === 0 ? (
