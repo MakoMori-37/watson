@@ -6,12 +6,12 @@ import Moisture from "./moisture/Moisture";
 import SmoothSkin from "./smoothSkin";
 const HOST = process.env.HOST;
 
-const RenderSelectd = (section, onReset) => {
+const RenderSelectd = (section, onReset, setHideLogo) => {
   switch (section) {
     case 1:
-      return <SunProtect onReset={onReset} />;
+      return <SunProtect onReset={onReset} setHideLogo={setHideLogo} />;
     case 2:
-      return <Brightening onReset={onReset} />;
+      return <Brightening onReset={onReset} setHideLogo={setHideLogo} />;
     case 3:
       return <Moisture onReset={onReset} />;
     case 4:
@@ -23,7 +23,7 @@ const RenderSelectd = (section, onReset) => {
 
 const ManagementBody = () => {
   const [section, setSection] = useState(0); //1-4
-
+  const [hideLogo, setHideLogo] = useState(false)
   const handleChangeSection = (data) => {
     setSection(data);
   };
@@ -37,13 +37,15 @@ const ManagementBody = () => {
       <img
         src={`${HOST}/image/logo.webp`}
         alt="logo"
-        className="w-auto h-auto absolute object-contain top-5 right-2 "
+        className={`w-auto h-auto absolute object-contain top-5 right-2 ${
+          hideLogo && " hidden"
+        } `}
         onClick={handleResetSection}
       />
       {section === 0 ? (
         <BodyShop onUpdate={handleChangeSection} />
       ) : (
-        RenderSelectd(section, handleResetSection)
+        RenderSelectd(section, handleResetSection, setHideLogo)
       )}
     </div>
   );

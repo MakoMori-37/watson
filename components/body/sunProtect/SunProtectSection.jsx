@@ -32,13 +32,12 @@ const RenderStep2 = ({ onNext = () => {} }) => {
 
 const RenderStep3 = ({ onNext = () => {} }) => {
   return (
-    <div className="px-14 pt-24 h-screen " onClick={onNext}>
-      {/* <img
+    <div className="w-full h-screen z-50" onClick={onNext}>
+      <img
         src={`${HOST}/image/body/sunProtect/content_3.webp`}
         alt="content"
-        className="w-full h-auto"
-      /> */}
-      รอรูป
+        className="w-full h-full"
+      />
     </div>
   );
 };
@@ -83,7 +82,7 @@ const RenderStep5 = () => {
   );
 };
 
-const SunProtectSection = ({ onReset = () => {} }) => {
+const SunProtectSection = ({ onReset = () => {}, setHideLogo = () => {} }) => {
   const [step, setStep] = useState(1);
 
   const incrementStep = () => {
@@ -116,6 +115,11 @@ const SunProtectSection = ({ onReset = () => {} }) => {
       return () => {
         clearTimeout(timeout);
       };
+    }
+    if (step === 3) {
+      setHideLogo(true);
+    } else {
+      setHideLogo(false);
     }
   }, [step]);
 

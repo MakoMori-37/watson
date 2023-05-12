@@ -20,7 +20,7 @@ const RenderStep1 = ({ onNext = () => {} }) => {
   );
 };
 
-const BrighteningSection = ({ onReset = () => {} }) => {
+const BrighteningSection = ({ onReset = () => {}, setHideLogo = () => {} }) => {
   const [step, setStep] = useState(1);
 
   const incrementStep = () => {
@@ -34,7 +34,7 @@ const BrighteningSection = ({ onReset = () => {} }) => {
       case 2:
         return <Vaseline onUpdateSection={incrementStep} />;
       case 3:
-        return <Citra onReset={onReset} />;
+        return <Citra onReset={onReset} setHideLogo={setHideLogo} />;
       default:
         return <div></div>;
     }

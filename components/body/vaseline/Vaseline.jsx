@@ -98,7 +98,7 @@ const RenderVaseline7 = ({ onNext = () => {} }) => {
 
 const Vaseline = ({ onUpdateSection = () => {}, isSection3 = false }) => {
   const [step, setStep] = useState(0);
-  console.log(step)
+  
   const incrementStep = () => {
     setStep(step + 1);
   };

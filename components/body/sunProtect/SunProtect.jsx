@@ -2,10 +2,10 @@ import React from "react";
 
 import SunProtectSection from "./SunProtectSection";
 
-const SunProtect = ({ onReset = () => {} }) => {
+const SunProtect = ({ onReset = () => {}, setHideLogo = () => {} }) => {
   return (
     <div>
-      <SunProtectSection onReset={onReset} />
+      <SunProtectSection onReset={onReset} setHideLogo={setHideLogo} />
     </div>
   );
 };

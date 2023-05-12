@@ -17,40 +17,37 @@ const RenderCitra0 = ({ onNext = () => {} }) => {
 };
 const RenderCitra1 = ({ onNext = () => {} }) => {
   return (
-    <div className="px-16 flex items-center h-screen" onClick={onNext}>
-      {/* <img
+    <div className="w-full h-screen" onClick={onNext}>
+      <img
         src={`${HOST}/image/body/citra/content_1.webp`}
         alt="title"
-        className="w-full h-auto"
-      /> */}
-      รอรูป
+        className="w-full h-full"
+      />
     </div>
   );
 };
 const RenderCitra2 = ({ onNext = () => {} }) => {
   return (
-    <div className="p-28 h-screen" onClick={onNext}>
-      {/* <img
+    <div className="w-full h-screen" onClick={onNext}>
+      <img
         src={`${HOST}/image/body/citra/content_2.webp`}
         alt="title"
-        className="w-full h-auto"
-      /> */}
-      รอรูป
+        className="w-full h-full"
+      />
     </div>
   );
 };
 const RenderCitra3 = ({ onNext = () => {} }) => {
   return (
     <div
-      className="flex items-center p-20 pt-36 h-screen w-full"
+      className="h-screen w-full"
       onClick={onNext}
     >
-      {/* <img
+      <img
         src={`${HOST}/image/body/citra/content_3.webp`}
         alt="title"
-        className="w-full h-auto"
-      /> */}
-      รอรูป
+        className="w-full h-full"
+      />
     </div>
   );
 };
@@ -66,7 +63,7 @@ const RenderCitra4 = () => {
   );
 };
 
-const Citra = ({ onReset = () => {}, isSection3 = false }) => {
+const Citra = ({ onReset = () => {}, isSection3 = false, setHideLogo = () => {} }) => {
   const [step, setStep] = useState(0);
 
   const incrementStep = () => {
@@ -83,6 +80,16 @@ const Citra = ({ onReset = () => {}, isSection3 = false }) => {
       return () => {
         clearTimeout(timeout);
       };
+    }
+  }, [step, isSection3]);
+
+  useEffect(() => {
+    if(!isSection3){
+      if(step === 1 || step === 2 || step === 3){
+        setHideLogo(true)
+      } else {
+        setHideLogo(false)
+      }
     }
   }, [step, isSection3]);
 
