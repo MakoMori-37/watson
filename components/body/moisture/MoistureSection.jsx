@@ -37,7 +37,7 @@ const MoistureSection = ({ onReset = () => {} }) => {
       case 2:
         return <Vaseline onUpdateSection={incrementStep} isSection3={true} />;
       case 3:
-        return <Citra onReset={onReset} />;
+        return <Citra onReset={onReset} isSection3={true} />;
       default:
         return <div></div>;
     }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 const HOST = process.env.HOST;
 
-const RenderStep0 = ({ onNext = () => {} }) => {
+const RenderCitra0 = ({ onNext = () => {} }) => {
   return (
     <div
       className="w-full flex items-center justify-center h-screen"
@@ -15,7 +15,7 @@ const RenderStep0 = ({ onNext = () => {} }) => {
     </div>
   );
 };
-const RenderStep1 = ({ onNext = () => {} }) => {
+const RenderCitra1 = ({ onNext = () => {} }) => {
   return (
     <div className="px-16 flex items-center h-screen" onClick={onNext}>
       {/* <img
@@ -27,7 +27,7 @@ const RenderStep1 = ({ onNext = () => {} }) => {
     </div>
   );
 };
-const RenderStep2 = ({ onNext = () => {} }) => {
+const RenderCitra2 = ({ onNext = () => {} }) => {
   return (
     <div className="p-28 h-screen" onClick={onNext}>
       {/* <img
@@ -39,7 +39,7 @@ const RenderStep2 = ({ onNext = () => {} }) => {
     </div>
   );
 };
-const RenderStep3 = ({ onNext = () => {} }) => {
+const RenderCitra3 = ({ onNext = () => {} }) => {
   return (
     <div
       className="flex items-center p-20 pt-36 h-screen w-full"
@@ -54,7 +54,7 @@ const RenderStep3 = ({ onNext = () => {} }) => {
     </div>
   );
 };
-const RenderStep4 = () => {
+const RenderCitra4 = () => {
   return (
     <div className="p-28 h-screen w-full">
       <img
@@ -66,7 +66,7 @@ const RenderStep4 = () => {
   );
 };
 
-const Citra = ({ onReset = () => {} }) => {
+const Citra = ({ onReset = () => {}, isSection3 = false }) => {
   const [step, setStep] = useState(0);
 
   const incrementStep = () => {
@@ -74,7 +74,8 @@ const Citra = ({ onReset = () => {} }) => {
   };
 
   useEffect(() => {
-    if (step === 4) {
+    const lastStep = isSection3 ? 1 : 4;
+    if (step === lastStep) {
       const timeout = setTimeout(() => {
         onReset();
       }, 6000);
@@ -83,26 +84,40 @@ const Citra = ({ onReset = () => {} }) => {
         clearTimeout(timeout);
       };
     }
-  }, [step]);
+  }, [step, isSection3]);
 
-  const renderPage = () => {
+  const renderSection2 = () => {
     switch (step) {
       case 0:
-        return <RenderStep0 onNext={incrementStep} />;
+        return <RenderCitra0 onNext={incrementStep} />;
       case 1:
-        return <RenderStep1 onNext={incrementStep} />;
+        return <RenderCitra1 onNext={incrementStep} />;
       case 2:
-        return <RenderStep2 onNext={incrementStep} />;
+        return <RenderCitra2 onNext={incrementStep} />;
       case 3:
-        return <RenderStep3 onNext={incrementStep} />;
+        return <RenderCitra3 onNext={incrementStep} />;
       case 4:
-        return <RenderStep4 />;
+        return <RenderCitra4 />;
+      default:
+        return <div></div>;
+    }
+  };
+  const renderSection3 = () => {
+    switch (step) {
+      case 0:
+        return <RenderCitra0 onNext={incrementStep} />;
+      case 1:
+        return <RenderCitra4 />;
       default:
         return <div></div>;
     }
   };
 
-  return <div className="h-screen w-full ">{renderPage()}</div>;
+  return (
+    <div className="h-screen w-full ">
+      {isSection3 ? renderSection3() : renderSection2()}
+    </div>
+  );
 };
 
 export default Citra;
