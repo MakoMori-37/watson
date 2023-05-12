@@ -49,6 +49,13 @@ body {
   background-position: center;
 }
 
+.bg__body {
+  background-image: url("../public/image/bg_body.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .bg__twotone {
   background-image: url("../public/image/bg_twotone.png");
   background-size: cover;

@@ -1,7 +1,35 @@
-import React from 'react'
+import ManagementFace from "@/components/face/ManagementFace";
+import React, { useState, useEffect } from "react";
 
-const index = () => {
-  return <div className="bg__default w-full h-screen ">index</div>;
-}
+const Body = () => {
+  const [showHome, setShowHome] = useState(true);
 
-export default index
+  const handleChangeShowHome = () => {
+    setShowHome(false);
+  };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      handleChangeShowHome();
+    }, 3000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  return (
+    <div className="w-full h-screen">
+      {showHome ? (
+        <div
+          onClick={handleChangeShowHome}
+          className="bg__body w-full h-screen"
+        />
+      ) : (
+        <ManagementFace />
+      )}
+    </div>
+  );
+};
+
+export default Body;
