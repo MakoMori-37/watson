@@ -3,6 +3,7 @@ import BodyShop from "./BodyShop";
 import SunProtect from "./sunProtect/SunProtect";
 import Brightening from "./brightening/Brightening";
 import Moisture from "./moisture/Moisture";
+import SmoothSkin from "./smoothSkin";
 const HOST = process.env.HOST;
 
 const RenderSelectd = (section, onReset) => {
@@ -13,6 +14,8 @@ const RenderSelectd = (section, onReset) => {
       return <Brightening onReset={onReset} />;
     case 3:
       return <Moisture onReset={onReset} />;
+    case 4:
+      return <SmoothSkin onReset={onReset} />;
     default:
       return <div></div>;
   }
