@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import VaselineSet1 from "../vaseline/VaselineSet1";
+import Citra from "../citra/Citra";
 const HOST = process.env.HOST;
 
 const RenderStep1 = ({ onNext = () => {} }) => {
@@ -32,24 +33,12 @@ const BrighteningSection = ({ onReset = () => {} }) => {
         return <RenderStep1 onNext={incrementStep} />;
       case 2:
         return <VaselineSet1 onUpdateSection={incrementStep} />;
-      // case 3:
-      //   return <RenderStep3 onNext={incrementStep} />;
+      case 3:
+        return <Citra onReset={onReset} />;
       default:
         return <div></div>;
     }
   };
-
-  // useEffect(() => {
-  //   if (step === 5) {
-  //     const timeout = setTimeout(() => {
-  //       onReset();
-  //     }, 6000);
-
-  //     return () => {
-  //       clearTimeout(timeout);
-  //     };
-  //   }
-  // }, [step]);
 
   return <div className="z-20 w-full h-screen">{RenderStep()}</div>;
 };

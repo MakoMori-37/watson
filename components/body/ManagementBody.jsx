@@ -11,9 +11,7 @@ const RenderSelectd = (section, onReset) => {
     case 2:
       return <Brightening onReset={onReset} />;
     // case 3:
-    //   return <Cream onReset={onReset} />;
-    // case 4:
-    //   return <MakeUp section={section} onReset={onReset} />;
+    //   return <Citra onReset={onReset} />;
     default:
       return <div></div>;
   }
