@@ -34,7 +34,7 @@ const RenderStep3 = ({ onNext = () => {} }) => {
   return (
     <div className="w-full h-screen z-50" onClick={onNext}>
       <img
-        src={`${HOST}/image/body/sunProtect/content_3.webp`}
+        src={`${HOST}/image/body/sunProtect/content_3.png`}
         alt="content"
         className="w-full h-full"
       />
