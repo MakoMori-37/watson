@@ -1,4 +1,4 @@
-import ManagementFace from "@/components/face/ManagementFace";
+import ManagementBody from "@/components/body/ManagementBody";
 import React, { useState, useEffect } from "react";
 
 const Body = () => {
@@ -26,7 +26,7 @@ const Body = () => {
           className="bg__body w-full h-screen"
         />
       ) : (
-        <ManagementFace />
+        <ManagementBody />
       )}
     </div>
   );
