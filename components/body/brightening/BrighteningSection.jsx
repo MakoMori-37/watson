@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import VaselineSet1 from "../vaseline/VaselineSet1";
 const HOST = process.env.HOST;
 
 const RenderStep1 = ({ onNext = () => {} }) => {
@@ -29,8 +30,8 @@ const BrighteningSection = ({ onReset = () => {} }) => {
     switch (step) {
       case 1:
         return <RenderStep1 onNext={incrementStep} />;
-      // case 2:
-      //   return <RenderStep2 onNext={incrementStep} />;
+      case 2:
+        return <VaselineSet1 onUpdateSection={incrementStep} />;
       // case 3:
       //   return <RenderStep3 onNext={incrementStep} />;
       default:
