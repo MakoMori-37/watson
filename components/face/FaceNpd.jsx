@@ -86,17 +86,17 @@ const FaceNpd = ({ onReset = {} }) => {
     setStep(step + 1);
   };
 
-  useEffect(() => {
-    if (step === 6) {
-      const timeout = setTimeout(() => {
-        onReset();
-      }, 6000);
+  // useEffect(() => {
+  //   if (step === 6) {
+  //     const timeout = setTimeout(() => {
+  //       onReset();
+  //     }, 6000);
 
-      return () => {
-        clearTimeout(timeout);
-      };
-    }
-  }, [step]);
+  //     return () => {
+  //       clearTimeout(timeout);
+  //     };
+  //   }
+  // }, [step]);
 
   const renderPage = () => {
     switch (step) {

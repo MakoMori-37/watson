@@ -39,10 +39,7 @@ const RenderCitra2 = ({ onNext = () => {} }) => {
 };
 const RenderCitra3 = ({ onNext = () => {} }) => {
   return (
-    <div
-      className="h-screen w-full"
-      onClick={onNext}
-    >
+    <div className="h-screen w-full" onClick={onNext}>
       <img
         src={`${HOST}/image/body/citra/content_3.webp`}
         alt="title"
@@ -62,33 +59,59 @@ const RenderCitra4 = () => {
     </div>
   );
 };
+const RenderPresenter1 = ({ onNext = () => {} }) => {
+  return (
+    <div className="p-20 w-full" onClick={onNext}>
+      <img
+        src={`${HOST}/image/body/citra/presenter_1.webp`}
+        alt="presenter_1"
+        className="w-full h-auto "
+      />
+    </div>
+  );
+};
+const RenderPresenter2 = ({ onNext = () => {} }) => {
+  return (
+    <div className="p-20 h-screen w-full" onClick={onNext}>
+      <img
+        src={`${HOST}/image/body/citra/presenter_2.webp`}
+        alt="presenter_2"
+        className="w-full h-auto "
+      />
+    </div>
+  );
+};
 
-const Citra = ({ onReset = () => {}, isSection3 = false, setHideLogo = () => {} }) => {
+const Citra = ({
+  onReset = () => {},
+  isSection3 = false,
+  setHideLogo = () => {},
+}) => {
   const [step, setStep] = useState(0);
 
   const incrementStep = () => {
     setStep(step + 1);
   };
 
-  useEffect(() => {
-    const lastStep = isSection3 ? 1 : 4;
-    if (step === lastStep) {
-      const timeout = setTimeout(() => {
-        onReset();
-      }, 6000);
+  // useEffect(() => {
+  //   const lastStep = isSection3 ? 3 : 6;
+  //   if (step === lastStep) {
+  //     const timeout = setTimeout(() => {
+  //       onReset();
+  //     }, 6000);
 
-      return () => {
-        clearTimeout(timeout);
-      };
-    }
-  }, [step, isSection3]);
+  //     return () => {
+  //       clearTimeout(timeout);
+  //     };
+  //   }
+  // }, [step, isSection3]);
 
   useEffect(() => {
-    if(!isSection3){
-      if(step === 1 || step === 2 || step === 3){
-        setHideLogo(true)
+    if (!isSection3) {
+      if (step === 1 || step === 2 || step === 3) {
+        setHideLogo(true);
       } else {
-        setHideLogo(false)
+        setHideLogo(false);
       }
     }
   }, [step, isSection3]);
@@ -104,6 +127,10 @@ const Citra = ({ onReset = () => {}, isSection3 = false, setHideLogo = () => {} 
       case 3:
         return <RenderCitra3 onNext={incrementStep} />;
       case 4:
+        return <RenderPresenter1 onNext={incrementStep} />;
+      case 5:
+        return <RenderPresenter2 onNext={incrementStep} />;
+      case 6:
         return <RenderCitra4 />;
       default:
         return <div></div>;
@@ -114,6 +141,10 @@ const Citra = ({ onReset = () => {}, isSection3 = false, setHideLogo = () => {} 
       case 0:
         return <RenderCitra0 onNext={incrementStep} />;
       case 1:
+        return <RenderPresenter1 onNext={incrementStep} />;
+      case 2:
+        return <RenderPresenter2 onNext={incrementStep} />;
+      case 3:
         return <RenderCitra4 />;
       default:
         return <div></div>;
