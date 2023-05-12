@@ -106,22 +106,22 @@ const SunProtectSection = ({ onReset = () => {}, setHideLogo = () => {} }) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (step === 5) {
-  //     const timeout = setTimeout(() => {
-  //       onReset();
-  //     }, 6000);
+  useEffect(() => {
+    // if (step === 5) {
+    //   const timeout = setTimeout(() => {
+    //     onReset();
+    //   }, 6000);
 
-  //     return () => {
-  //       clearTimeout(timeout);
-  //     };
-  //   }
-  //   if (step === 3) {
-  //     setHideLogo(true);
-  //   } else {
-  //     setHideLogo(false);
-  //   }
-  // }, [step]);
+    //   return () => {
+    //     clearTimeout(timeout);
+    //   };
+    // }
+    if (step === 3) {
+      setHideLogo(true);
+    } else {
+      setHideLogo(false);
+    }
+  }, [step]);
 
   return <div className="z-20 w-full h-screen">{RenderStep()}</div>;
 };
