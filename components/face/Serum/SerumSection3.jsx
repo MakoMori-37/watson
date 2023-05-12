@@ -40,12 +40,12 @@ const RenderStep3 = ({ onNext = () => {} }) => {
   return (
     <div className="px-8 pt-20 h-screen" onClick={onNext}>
       <img
-        src="/image/face/section/2/3/title_2.png"
+        src={`${HOST}/image/face/section/2/3/title_2.png`}
         alt="title"
         className="w-[50%] mb-20 "
       />
       <img
-        src="/image/face/section/2/3/content_2.png"
+        src={`${HOST}/image/face/section/2/3/content_2.png`}
         alt="content"
         className="w-full h-auto"
       />
