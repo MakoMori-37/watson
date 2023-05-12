@@ -1,6 +1,17 @@
 import React, { useEffect, useState } from "react";
 const HOST = process.env.HOST;
 
+const RenderStep0 = ({ onNext = () => {} }) => {
+  return (
+    <div className="w-full flex items-center justify-center h-screen" onClick={onNext}>
+      <img
+        src={`${HOST}/image/face/npd/title.webp`}
+        alt="title"
+        className="w-[70%] h-auto"
+      />
+    </div>
+  );
+};
 const RenderStep1 = ({ onNext = () => {} }) => {
   return (
     <div className="px-8 pt-20 h-screen" onClick={onNext}>
@@ -69,7 +80,7 @@ const RenderStep6 = () => {
 };
 
 const FaceNpd = ({ onReset = {} }) => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
 
   const incrementStep = () => {
     setStep(step + 1);
@@ -89,6 +100,8 @@ const FaceNpd = ({ onReset = {} }) => {
 
   const renderPage = () => {
     switch (step) {
+      case 0:
+        return <RenderStep0 onNext={incrementStep} />;
       case 1:
         return <RenderStep1 onNext={incrementStep} />;
       case 2:
