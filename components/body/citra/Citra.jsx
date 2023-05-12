@@ -17,33 +17,42 @@ const RenderCitra0 = ({ onNext = () => {} }) => {
 };
 const RenderCitra1 = ({ onNext = () => {} }) => {
   return (
-    <div className="w-full h-screen" onClick={onNext}>
+    <div
+      className="w-full h-full flex justify-center items-center"
+      onClick={onNext}
+    >
       <img
         src={`${HOST}/image/body/citra/content_1.webp`}
         alt="title"
-        className="w-full h-full"
+        className="w-full"
       />
     </div>
   );
 };
 const RenderCitra2 = ({ onNext = () => {} }) => {
   return (
-    <div className="w-full h-screen" onClick={onNext}>
+    <div
+      className="w-full h-full flex justify-center items-center"
+      onClick={onNext}
+    >
       <img
         src={`${HOST}/image/body/citra/content_2.webp`}
         alt="title"
-        className="w-full h-full"
+        className="w-full"
       />
     </div>
   );
 };
 const RenderCitra3 = ({ onNext = () => {} }) => {
   return (
-    <div className="h-screen w-full" onClick={onNext}>
+    <div
+      className="w-full h-full flex justify-center items-center"
+      onClick={onNext}
+    >
       <img
         src={`${HOST}/image/body/citra/content_3.webp`}
         alt="title"
-        className="w-full h-full"
+        className="w-full"
       />
     </div>
   );

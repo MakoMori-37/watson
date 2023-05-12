@@ -32,11 +32,14 @@ const RenderStep2 = ({ onNext = () => {} }) => {
 
 const RenderStep3 = ({ onNext = () => {} }) => {
   return (
-    <div className="w-full h-screen z-50" onClick={onNext}>
+    <div
+      className="w-full h-full flex justify-center items-center z-50"
+      onClick={onNext}
+    >
       <img
         src={`${HOST}/image/body/sunProtect/content_3.png`}
         alt="content"
-        className="w-full h-full"
+        className="w-full"
       />
     </div>
   );
