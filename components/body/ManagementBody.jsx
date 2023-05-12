@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BodyShop from "./BodyShop";
 import SunProtect from "./sunProtect/SunProtect";
 import Brightening from "./brightening/Brightening";
+import Moisture from "./moisture/Moisture";
 const HOST = process.env.HOST;
 
 const RenderSelectd = (section, onReset) => {
@@ -10,8 +11,8 @@ const RenderSelectd = (section, onReset) => {
       return <SunProtect onReset={onReset} />;
     case 2:
       return <Brightening onReset={onReset} />;
-    // case 3:
-    //   return <Citra onReset={onReset} />;
+    case 3:
+      return <Moisture onReset={onReset} />;
     default:
       return <div></div>;
   }

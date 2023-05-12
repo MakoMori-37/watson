@@ -19,7 +19,7 @@ const RenderStep1 = ({ onNext = () => {} }) => {
   return (
     <div className="px-16 flex items-center h-screen" onClick={onNext}>
       {/* <img
-        src={`${HOST}/image/body/vaseline/vaseline_1.webp`}
+        src={`${HOST}/image/body/citra/content_1.webp`}
         alt="title"
         className="w-full h-auto"
       /> */}
@@ -31,7 +31,7 @@ const RenderStep2 = ({ onNext = () => {} }) => {
   return (
     <div className="p-28 h-screen" onClick={onNext}>
       {/* <img
-        src={`${HOST}/image/body/vaseline/vaseline_2.webp`}
+        src={`${HOST}/image/body/citra/content_2.webp`}
         alt="title"
         className="w-full h-auto"
       /> */}
@@ -46,7 +46,7 @@ const RenderStep3 = ({ onNext = () => {} }) => {
       onClick={onNext}
     >
       {/* <img
-        src={`${HOST}/image/body/vaseline/vaseline_3.webp`}
+        src={`${HOST}/image/body/citra/content_3.webp`}
         alt="title"
         className="w-full h-auto"
       /> */}
@@ -54,9 +54,9 @@ const RenderStep3 = ({ onNext = () => {} }) => {
     </div>
   );
 };
-const RenderStep4 = ({ onNext = () => {} }) => {
+const RenderStep4 = () => {
   return (
-    <div className="p-28 h-screen w-full" onClick={onNext}>
+    <div className="p-28 h-screen w-full">
       <img
         src={`${HOST}/image/body/citra/content_4.webp`}
         alt="content_4"
