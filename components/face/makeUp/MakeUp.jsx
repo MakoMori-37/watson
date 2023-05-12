@@ -1,11 +1,11 @@
 import React from "react";
 
-import FoamSection from "./MakeUpSection";
+import MakeUpSection from "./MakeUpSection";
 
 const MakeUp = ({ onReset = () => {} }) => {
   return (
     <div>
-      <FoamSection onReset={onReset} />
+      <MakeUpSection onReset={onReset} />
     </div>
   );
 };
