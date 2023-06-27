@@ -5,7 +5,7 @@ const RenderStep1 = ({ onNext = () => {} }) => {
   return (
     <div className="px-14 pt-20 h-screen " onClick={onNext}>
       <img
-        src={`${HOST}/image/body/sunProtect/title_1.webp`}
+        src={`${HOST}/image/body/sunProtect/title.png`}
         alt="title"
         className="w-[70%] mb-20 "
       />
@@ -20,10 +20,10 @@ const RenderStep1 = ({ onNext = () => {} }) => {
 
 const RenderStep2 = ({ onNext = () => {} }) => {
   return (
-    <div className="px-14 pt-24 h-screen " onClick={onNext}>
+    <div className="px-14 pt-24 h-screen" onClick={onNext}>
       <img
-        src={`${HOST}/image/body/sunProtect/content_2.webp`}
-        alt="content"
+        alt="content_2"
+        src={`${HOST}/image/body/sunProtect/content_2.png`}
         className="w-full h-auto"
       />
     </div>

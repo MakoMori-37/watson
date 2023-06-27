@@ -74,7 +74,7 @@ const BodyShop = ({ onUpdate = () => {} }) => {
 
       <div className="pt-8">
         <img
-          src={`${HOST}/image/body/home/more.webp`}
+          src={`${HOST}/image/body/home/more.png`}
           alt="title"
           className="w-full h-auto object-contain"
         />
