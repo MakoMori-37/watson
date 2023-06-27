@@ -8,7 +8,7 @@ const RenderVaseline0 = ({ onNext = () => {} }) => {
       onClick={onNext}
     >
       <img
-        src={`${HOST}/image/body/vaseline/title.webp`}
+        src={`${HOST}/image/body/vaseline/title.png`}
         alt="title"
         className="w-[70%] h-auto"
       />
@@ -19,7 +19,7 @@ const RenderVaseline1 = ({ onNext = () => {} }) => {
   return (
     <div className="px-16 flex items-center h-screen" onClick={onNext}>
       <img
-        src={`${HOST}/image/body/vaseline/vaseline_1.webp`}
+        src={`${HOST}/image/body/vaseline/vaseline_1.png`}
         alt="title"
         className="w-full h-auto"
       />
@@ -30,7 +30,7 @@ const RenderVaseline2 = ({ onNext = () => {} }) => {
   return (
     <div className="p-28 h-screen" onClick={onNext}>
       <img
-        src={`${HOST}/image/body/vaseline/vaseline_2.webp`}
+        src={`${HOST}/image/body/vaseline/vaseline_2.png`}
         alt="title"
         className="w-full h-auto"
       />
@@ -40,11 +40,11 @@ const RenderVaseline2 = ({ onNext = () => {} }) => {
 const RenderVaseline3 = ({ onNext = () => {} }) => {
   return (
     <div
-      className="flex items-center p-20 pt-36 h-screen w-full"
+      className="flex items-center p-20  h-screen w-full"
       onClick={onNext}
     >
       <img
-        src={`${HOST}/image/body/vaseline/vaseline_3.webp`}
+        src={`${HOST}/image/body/vaseline/vaseline_3.png`}
         alt="title"
         className="w-full h-auto"
       />
@@ -53,9 +53,9 @@ const RenderVaseline3 = ({ onNext = () => {} }) => {
 };
 const RenderVaseline4 = ({ onNext = () => {} }) => {
   return (
-    <div className="p-28 h-screen w-full" onClick={onNext}>
+    <div className="p-20 pt-36  h-screen w-full" onClick={onNext}>
       <img
-        src={`${HOST}/image/body/vaseline/vaseline_4.webp`}
+        src={`${HOST}/image/body/vaseline/vaseline_4.png`}
         alt="title"
         className="w-full h-auto "
       />
@@ -66,7 +66,7 @@ const RenderVaseline5 = ({ onNext = () => {} }) => {
   return (
     <div className="p-28 pt-36 h-screen" onClick={onNext}>
       <img
-        src={`${HOST}/image/body/vaseline/vaseline_5.webp`}
+        src={`${HOST}/image/body/vaseline/vaseline_5.png`}
         alt="title"
         className="w-full h-auto"
       />

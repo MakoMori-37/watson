@@ -7,7 +7,7 @@ const RenderStep1 = ({ onNext = () => {} }) => {
   return (
     <div className="p-24 h-screen " onClick={onNext}>
       <img
-        src={`${HOST}/image/body/brightening/title.webp`}
+        src={`${HOST}/image/body/brightening/title.png`}
         alt="title"
         className="w-[70%] mb-8 "
       />
