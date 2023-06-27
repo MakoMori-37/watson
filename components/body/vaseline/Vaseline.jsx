@@ -88,7 +88,7 @@ const RenderVaseline7 = ({ onNext = () => {} }) => {
   return (
     <div className="p-28 pt-36 h-screen" onClick={onNext}>
       <img
-        src={`${HOST}/image/body/vaseline/vaseline_7.webp`}
+        src={`${HOST}/image/body/vaseline/vaseline_7.png`}
         alt="title"
         className="w-full h-auto"
       />
