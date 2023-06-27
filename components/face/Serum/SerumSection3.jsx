@@ -8,7 +8,7 @@ const RenderStep1 = ({ onNext = () => {} }) => {
       <img
         src={`${HOST}/image/face/section/2/3/title.png`}
         alt="title"
-        className="w-[70%] mb-10 "
+        className="w-[70%] mb-6 "
       />
       <img
         src={`${HOST}/image/face/section/2/3/content.png`}
@@ -21,7 +21,7 @@ const RenderStep1 = ({ onNext = () => {} }) => {
 
 const RenderStep2 = ({ onNext = () => {} }) => {
   return (
-    <div className="px-8 pt-20 h-screen" onClick={onNext}>
+    <div className="px-14 pt-20 h-screen" onClick={onNext}>
       <img
         src={`${HOST}/image/face/section/2/3/title_1.png`}
         alt="title"
@@ -38,7 +38,7 @@ const RenderStep2 = ({ onNext = () => {} }) => {
 
 const RenderStep3 = ({ onNext = () => {} }) => {
   return (
-    <div className="px-8 pt-20 h-screen" onClick={onNext}>
+    <div className="px-14 pt-20 h-screen" onClick={onNext}>
       <img
         src={`${HOST}/image/face/section/2/3/title_2.png`}
         alt="title"

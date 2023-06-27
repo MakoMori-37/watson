@@ -4,7 +4,7 @@ const HOST = process.env.HOST;
 
 const RenderStep1 = ({ onNext = () => {} }) => {
   return (
-    <div className="px-8 pt-10 h-screen " onClick={onNext}>
+    <div className="p-14 h-screen " onClick={onNext}>
       <img
         src={`${HOST}/image/face/section/4/title.png`}
         alt="title"

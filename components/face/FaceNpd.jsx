@@ -8,7 +8,7 @@ const RenderStep0 = ({ onNext = () => {} }) => {
       onClick={onNext}
     >
       <img
-        src={`${HOST}/image/face/npd/title.webp`}
+        src={`${HOST}/image/face/npd/title.png`}
         alt="title"
         className="w-[70%] h-auto"
       />
@@ -19,7 +19,7 @@ const RenderStep1 = ({ onNext = () => {} }) => {
   return (
     <div className="px-8 pt-20 h-screen" onClick={onNext}>
       <img
-        src={`${HOST}/image/face/npd/npd_1.webp`}
+        src={`${HOST}/image/face/npd/npd_1.png`}
         alt="title"
         className="w-full h-auto mb-20 "
       />
@@ -30,7 +30,7 @@ const RenderStep2 = ({ onNext = () => {} }) => {
   return (
     <div className="px-8 pt-20 h-screen" onClick={onNext}>
       <img
-        src={`${HOST}/image/face/npd/npd_2.webp`}
+        src={`${HOST}/image/face/npd/npd_2.png`}
         alt="title"
         className="w-full h-auto mb-20 "
       />
@@ -77,7 +77,7 @@ const RenderStep6 = () => {
   return (
     <div className="px-8 pt-20 h-screen">
       <img
-        src={`${HOST}/image/face/npd/npd_6.webp`}
+        src={`${HOST}/image/face/npd/npd_6.png`}
         alt="title"
         className="w-full h-auto mb-20 "
       />
