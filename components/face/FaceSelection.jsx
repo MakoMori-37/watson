@@ -12,11 +12,11 @@ const RenderSelectd = (mode, section, onReset, handleChangeToMainMode) => {
     case 1:
       return <Foam onReset={onReset} onBack={handleChangeToMainMode} />;
     case 2:
-      return <Serum section={section} onReset={onReset} />;
+      return <Serum section={section} onBack={handleChangeToMainMode} />;
     case 3:
-      return <Cream onReset={onReset} />;
+      return <Cream onBack={handleChangeToMainMode} />;
     case 4:
-      return <MakeUp section={section} onReset={onReset} />;
+      return <MakeUp section={section} onBack={handleChangeToMainMode} />;
     default:
       return <div></div>;
   }

@@ -19,11 +19,19 @@ const RenderStep1 = ({ onNext = () => {} }) => {
   );
 };
 
-const CreamSection = ({ onReset = () => {} }) => {
+const CreamSection = ({ onBack = () => {} }) => {
   const [step, setStep] = useState(1);
 
   const incrementStep = () => {
     setStep(step + 1);
+  };
+
+  const previousStep = () => {
+    if (step === 1) {
+      onBack();
+    } else {
+      setStep(step - 1);
+    }
   };
 
   return (
@@ -31,8 +39,17 @@ const CreamSection = ({ onReset = () => {} }) => {
       {step === 1 ? (
         <RenderStep1 onNext={incrementStep} />
       ) : (
-        <FaceNpd onReset={onReset} />
+        <FaceNpd onBack={previousStep} />
       )}
+
+      {step === 1 ? (
+        <img
+          alt="btn_back"
+          onClick={previousStep}
+          src={`${HOST}/image/btn_back.webp`}
+          className="w-20 absolute bottom-6 right-6 "
+        />
+      ) : null}
     </div>
   );
 };

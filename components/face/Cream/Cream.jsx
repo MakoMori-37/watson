@@ -2,10 +2,10 @@ import React from "react";
 
 import CreamSection from "./CreamSection";
 
-const Cream = ({ onReset = () => {} }) => {
+const Cream = ({ onBack = () => {} }) => {
   return (
     <div>
-      <CreamSection onReset={onReset} />
+      <CreamSection onBack={onBack} />
     </div>
   );
 };
