@@ -8,7 +8,7 @@ const RenderStep1 = ({ onNext = () => {} }) => {
       <img
         src={`${HOST}/image/face/section/1/1/title.png`}
         alt="title"
-        className="w-[70%] mb-20 "
+        className="w-[70%] mb-10 "
       />
       <img
         src={`${HOST}/image/face/section/1/1/content.png`}

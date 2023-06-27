@@ -4,7 +4,7 @@ const HOST = process.env.HOST;
 
 const RenderStep1 = ({ onNext = () => {} }) => {
   return (
-    <div className="px-8 pt-20 h-screen " onClick={onNext}>
+    <div className="p-14 pt-20 h-screen " onClick={onNext}>
       <img
         src={`${HOST}/image/face/section/1/1/title.png`}
         alt="title"
@@ -21,11 +21,11 @@ const RenderStep1 = ({ onNext = () => {} }) => {
 
 const RenderStep2 = ({ onNext = () => {} }) => {
   return (
-    <div className="px-8 pt-20 h-screen" onClick={onNext}>
+    <div className="px-10 pt-20 h-screen" onClick={onNext}>
       <img
         src={`${HOST}/image/face/section/1/2/title.png`}
         alt="title"
-        className="w-[50%] mb-10 "
+        className="w-[45%] mb-4 "
       />
       <img
         src={`${HOST}/image/face/section/1/2/content.png`}
