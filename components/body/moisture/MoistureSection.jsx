@@ -10,7 +10,7 @@ const RenderStep1 = ({ onNext = () => {} }) => {
       onClick={onNext}
     >
       <img
-        src={`${HOST}/image/body/moisture/title.webp`}
+        src={`${HOST}/image/body/moisture/title.png`}
         alt="title"
         className="w-[70%] mb-8"
       />

@@ -8,7 +8,7 @@ const RenderCitra0 = ({ onNext = () => {} }) => {
       onClick={onNext}
     >
       <img
-        src={`${HOST}/image/body/citra/title.webp`}
+        src={`${HOST}/image/body/citra/title.png`}
         alt="title"
         className="w-[70%] h-auto"
       />
