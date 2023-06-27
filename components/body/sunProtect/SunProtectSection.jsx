@@ -85,11 +85,19 @@ const RenderStep5 = () => {
   );
 };
 
-const SunProtectSection = ({ onReset = () => {}, setHideLogo = () => {} }) => {
+const SunProtectSection = ({ setHideLogo = () => {}, onReset = () => {} }) => {
   const [step, setStep] = useState(1);
 
   const incrementStep = () => {
     setStep(step + 1);
+  };
+
+  const previousStep = () => {
+    if (step === 1) {
+      onReset();
+    } else {
+      setStep(step - 1);
+    }
   };
 
   const RenderStep = () => {
@@ -110,15 +118,6 @@ const SunProtectSection = ({ onReset = () => {}, setHideLogo = () => {} }) => {
   };
 
   useEffect(() => {
-    // if (step === 5) {
-    //   const timeout = setTimeout(() => {
-    //     onReset();
-    //   }, 6000);
-
-    //   return () => {
-    //     clearTimeout(timeout);
-    //   };
-    // }
     if (step === 3) {
       setHideLogo(true);
     } else {
@@ -126,7 +125,17 @@ const SunProtectSection = ({ onReset = () => {}, setHideLogo = () => {} }) => {
     }
   }, [step]);
 
-  return <div className="z-20 w-full h-screen">{RenderStep()}</div>;
+  return (
+    <div className="z-20 w-full h-screen">
+      {RenderStep()}
+      <img
+        alt="content"
+        onClick={previousStep}
+        src={`${HOST}/image/btn_back.webp`}
+        className="w-20 absolute bottom-6 right-6 "
+      />
+    </div>
+  );
 };
 
 export default SunProtectSection;
