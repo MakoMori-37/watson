@@ -2,10 +2,10 @@ import React from "react";
 
 import MakeUpSection from "./MakeUpSection";
 
-const MakeUp = ({ onReset = () => {} }) => {
+const MakeUp = ({ onBack = () => {} }) => {
   return (
     <div>
-      <MakeUpSection onReset={onReset} />
+      <MakeUpSection onBack={onBack} />
     </div>
   );
 };

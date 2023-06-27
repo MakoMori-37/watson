@@ -4,11 +4,11 @@ const HOST = process.env.HOST;
 
 const RenderStep1 = ({ onNext = () => {} }) => {
   return (
-    <div className="px-8 pt-20 h-screen " onClick={onNext}>
+    <div className="px-8 pt-10 h-screen " onClick={onNext}>
       <img
         src={`${HOST}/image/face/section/4/title.png`}
         alt="title"
-        className="w-[40%] h-auto mb-20 "
+        className="w-[40%] h-auto mb-10 "
       />
       <img
         src={`${HOST}/image/face/section/4/content.png`}
@@ -19,11 +19,19 @@ const RenderStep1 = ({ onNext = () => {} }) => {
   );
 };
 
-const MakeUpSection = ({ onReset = () => {} }) => {
+const MakeUpSection = ({ onBack = () => {} }) => {
   const [step, setStep] = useState(1);
 
   const incrementStep = () => {
     setStep(step + 1);
+  };
+
+  const previousStep = () => {
+    if (step === 1) {
+      onBack();
+    } else {
+      setStep(step - 1);
+    }
   };
 
   return (
@@ -31,8 +39,17 @@ const MakeUpSection = ({ onReset = () => {} }) => {
       {step === 1 ? (
         <RenderStep1 onNext={incrementStep} />
       ) : (
-        <FaceNpd onReset={onReset} />
+        <FaceNpd onBack={onBack} />
       )}
+
+      {step !== 3 ? (
+        <img
+          alt="btn_back"
+          onClick={previousStep}
+          src={`${HOST}/image/btn_back.webp`}
+          className="w-20 absolute bottom-6 right-6 "
+        />
+      ) : null}
     </div>
   );
 };
