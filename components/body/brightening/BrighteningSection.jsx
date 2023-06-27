@@ -69,7 +69,7 @@ const BrighteningSection = ({ onReset = () => {}, setHideLogo = () => {} }) => {
 
       {step == 1 ? (
         <img
-          alt="content"
+          alt="btn_back"
           onClick={onReset}
           src={`${HOST}/image/btn_back.webp`}
           className="w-20 absolute bottom-6 right-6 "

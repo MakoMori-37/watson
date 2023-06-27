@@ -167,7 +167,7 @@ const Vaseline = ({
       {isSection3 ? renderSection3() : renderSection2()}
 
       <img
-        alt="content"
+        alt="btn_back"
         onClick={previousStep}
         src={`${HOST}/image/btn_back.webp`}
         className="w-20 absolute bottom-6 right-6 "
