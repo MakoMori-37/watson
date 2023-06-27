@@ -92,7 +92,7 @@ const RenderPresenter2 = ({ onNext = () => {} }) => {
 };
 
 const Citra = ({
-  onReset = () => {},
+  onBack = () => {},
   isSection3 = false,
   setHideLogo = () => {},
 }) => {
@@ -102,18 +102,13 @@ const Citra = ({
     setStep(step + 1);
   };
 
-  // useEffect(() => {
-  //   const lastStep = isSection3 ? 3 : 6;
-  //   if (step === lastStep) {
-  //     const timeout = setTimeout(() => {
-  //       onReset();
-  //     }, 6000);
-
-  //     return () => {
-  //       clearTimeout(timeout);
-  //     };
-  //   }
-  // }, [step, isSection3]);
+  const previousStep = () => {
+    if (step === 0) {
+      onBack();
+    } else {
+      setStep(step - 1);
+    }
+  };
 
   useEffect(() => {
     if (!isSection3) {
@@ -163,6 +158,13 @@ const Citra = ({
   return (
     <div className="h-screen w-full ">
       {isSection3 ? renderSection3() : renderSection2()}
+
+      <img
+        alt="content"
+        onClick={previousStep}
+        src={`${HOST}/image/btn_back.webp`}
+        className="w-20 absolute bottom-6 right-6 "
+      />
     </div>
   );
 };

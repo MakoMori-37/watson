@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 const HOST = process.env.HOST;
 
 const RenderVaseline0 = ({ onNext = () => {} }) => {
@@ -96,11 +96,24 @@ const RenderVaseline7 = ({ onNext = () => {} }) => {
   );
 };
 
-const Vaseline = ({ onUpdateSection = () => {}, isSection3 = false }) => {
+const Vaseline = ({
+  onBack = () => {},
+  isSection3 = false,
+  reverseMode = false,
+  onUpdateSection = () => {},
+}) => {
   const [step, setStep] = useState(0);
-  
+
   const incrementStep = () => {
     setStep(step + 1);
+  };
+
+  const previousStep = () => {
+    if (step === 0) {
+      onBack();
+    } else {
+      setStep(step - 1);
+    }
   };
 
   const renderSection2 = () => {
@@ -143,9 +156,22 @@ const Vaseline = ({ onUpdateSection = () => {}, isSection3 = false }) => {
     }
   };
 
+  useEffect(() => {
+    if (reverseMode) {
+      isSection3 ? setStep(6) : setStep(5);
+    }
+  }, []);
+
   return (
     <div className="h-screen w-full ">
       {isSection3 ? renderSection3() : renderSection2()}
+
+      <img
+        alt="content"
+        onClick={previousStep}
+        src={`${HOST}/image/btn_back.webp`}
+        className="w-20 absolute bottom-6 right-6 "
+      />
     </div>
   );
 };
