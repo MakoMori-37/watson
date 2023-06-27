@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 const HOST = process.env.HOST;
 
 const RenderStep0 = ({ onNext = () => {} }) => {
   return (
-    <div className="w-full flex items-center justify-center h-screen" onClick={onNext}>
+    <div
+      className="w-full flex items-center justify-center h-screen"
+      onClick={onNext}
+    >
       <img
         src={`${HOST}/image/face/npd/title.webp`}
         alt="title"
@@ -82,24 +85,20 @@ const RenderStep6 = () => {
   );
 };
 
-const FaceNpd = ({ onReset = {} }) => {
+const FaceNpd = ({ onBack = {} }) => {
   const [step, setStep] = useState(0);
 
   const incrementStep = () => {
     setStep(step + 1);
   };
 
-  // useEffect(() => {
-  //   if (step === 6) {
-  //     const timeout = setTimeout(() => {
-  //       onReset();
-  //     }, 6000);
-
-  //     return () => {
-  //       clearTimeout(timeout);
-  //     };
-  //   }
-  // }, [step]);
+  const previousStep = () => {
+    if (step === 0) {
+      onBack();
+    } else {
+      setStep(step - 1);
+    }
+  };
 
   const renderPage = () => {
     switch (step) {
@@ -122,7 +121,17 @@ const FaceNpd = ({ onReset = {} }) => {
     }
   };
 
-  return <div className="h-screen w-full ">{renderPage()}</div>;
+  return (
+    <div className="h-screen w-full ">
+      {renderPage()}
+      <img
+        alt="btn_back"
+        onClick={previousStep}
+        src={`${HOST}/image/btn_back.webp`}
+        className="w-20 absolute bottom-6 right-6 "
+      />
+    </div>
+  );
 };
 
 export default FaceNpd;

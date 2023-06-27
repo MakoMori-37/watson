@@ -2,10 +2,10 @@ import React from "react";
 
 import FoamSection from "./FoamSection";
 
-const Foam = ({ onReset = () => {} }) => {
+const Foam = ({ onBack = () => {} }) => {
   return (
     <div>
-      <FoamSection onReset={onReset} />
+      <FoamSection onBack={onBack} />
     </div>
   );
 };

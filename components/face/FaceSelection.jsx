@@ -7,10 +7,10 @@ import MakeUp from "./makeUp/MakeUp";
 
 const HOST = process.env.HOST;
 
-const RenderSelectd = (mode, section, onReset) => {
+const RenderSelectd = (mode, section, onReset, handleChangeToMainMode) => {
   switch (mode) {
     case 1:
-      return <Foam onReset={onReset} />;
+      return <Foam onReset={onReset} onBack={handleChangeToMainMode} />;
     case 2:
       return <Serum section={section} onReset={onReset} />;
     case 3:
@@ -46,7 +46,6 @@ const RenderSelectionTools = ({ onUpdate = () => {}, section = 0 }) => {
     case 5:
       imageExplain = `${HOST}/image/face/section/explain_5.webp`;
       break;
-
     default:
       break;
   }
@@ -98,13 +97,26 @@ const FaceSelection = ({ section = 0, onReset = () => {} }) => {
     setMode(data);
   };
 
+  const handleChangeToMainMode = () => {
+    setMode(0)
+  }
+
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center">
       {mode === 0 ? (
         <RenderSelectionTools onUpdate={handleChangeMode} section={section} />
       ) : (
-        RenderSelectd(mode, section, onReset)
+        RenderSelectd(mode, section, onReset, handleChangeToMainMode)
       )}
+
+      {mode === 0 ? (
+        <img
+          alt="btn_back"
+          onClick={onReset}
+          src={`${HOST}/image/btn_back.webp`}
+          className="w-20 absolute bottom-6 right-6 "
+        />
+      ) : null}
     </div>
   );
 };
