@@ -6,12 +6,12 @@ const RenderStep1 = ({ onNext = () => {} }) => {
   return (
     <div className="px-8 pt-20 h-screen " onClick={onNext}>
       <img
-        src={`${HOST}/image/face/section/1/1/title.png`}
+        src={`${HOST}/image/face/section/2/3/title.png`}
         alt="title"
-        className="w-[70%] mb-10 "
+        className="w-[70%] mb-4 "
       />
       <img
-        src={`${HOST}/image/face/section/1/1/content.png`}
+        src={`${HOST}/image/face/section/2/3/content.png`}
         alt="content"
         className="w-full h-auto"
       />
@@ -23,12 +23,12 @@ const RenderStep2 = ({ onNext = () => {} }) => {
   return (
     <div className="px-8 pt-20 h-screen" onClick={onNext}>
       <img
-        src={`${HOST}/image/face/section/1/2/title.png`}
+        src={`${HOST}/image/face/section/2/3/title_2.png`}
         alt="title"
         className="w-[50%] mb-20 "
       />
       <img
-        src={`${HOST}/image/face/section/1/2/content.png`}
+        src={`${HOST}/image/face/section/2/3/content_2.png`}
         alt="content"
         className="w-full h-auto"
       />

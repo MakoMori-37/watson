@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // basePath: "/app/watson2023",
+  basePath: "/app/watson2023",
   images: {
     unoptimized: true,
   },
