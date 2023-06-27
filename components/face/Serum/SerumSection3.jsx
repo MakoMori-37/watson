@@ -8,7 +8,7 @@ const RenderStep1 = ({ onNext = () => {} }) => {
       <img
         src={`${HOST}/image/face/section/2/3/title.png`}
         alt="title"
-        className="w-[70%] mb-20 "
+        className="w-[70%] mb-10 "
       />
       <img
         src={`${HOST}/image/face/section/2/3/content.png`}
@@ -25,7 +25,7 @@ const RenderStep2 = ({ onNext = () => {} }) => {
       <img
         src={`${HOST}/image/face/section/2/3/title_1.png`}
         alt="title"
-        className="w-[50%] mb-20 "
+        className="w-[50%] mb-6 "
       />
       <img
         src={`${HOST}/image/face/section/2/3/content_1.png`}
@@ -53,11 +53,19 @@ const RenderStep3 = ({ onNext = () => {} }) => {
   );
 };
 
-const SerumSection3 = ({ onReset = () => {} }) => {
+const SerumSection3 = ({ onBack = () => {} }) => {
   const [step, setStep] = useState(1);
 
   const incrementStep = () => {
     setStep(step + 1);
+  };
+
+  const previousStep = () => {
+    if (step === 1) {
+      onBack();
+    } else {
+      setStep(step - 1);
+    }
   };
 
   return (
@@ -69,8 +77,17 @@ const SerumSection3 = ({ onReset = () => {} }) => {
       ) : step === 3 ? (
         <RenderStep3 onNext={incrementStep} />
       ) : (
-        <FaceNpd onReset={onReset} />
+        <FaceNpd onBack={previousStep} />
       )}
+
+      {step !== 4 ? (
+        <img
+          alt="btn_back"
+          onClick={previousStep}
+          src={`${HOST}/image/btn_back.webp`}
+          className="w-20 absolute bottom-6 right-6 "
+        />
+      ) : null}
     </div>
   );
 };

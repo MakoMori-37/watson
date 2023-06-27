@@ -36,11 +36,19 @@ const RenderStep2 = ({ onNext = () => {} }) => {
   );
 };
 
-const SerumSection5 = ({ onReset = () => {} }) => {
+const SerumSection5 = ({ onBack = () => {} }) => {
   const [step, setStep] = useState(1);
 
   const incrementStep = () => {
     setStep(step + 1);
+  };
+
+  const previousStep = () => {
+    if (step === 1) {
+      onBack();
+    } else {
+      setStep(step - 1);
+    }
   };
 
   return (
@@ -50,8 +58,17 @@ const SerumSection5 = ({ onReset = () => {} }) => {
       ) : step === 2 ? (
         <RenderStep2 onNext={incrementStep} />
       ) : (
-        <FaceNpd onReset={onReset} />
+        <FaceNpd onBack={previousStep} />
       )}
+
+      {step !== 3 ? (
+        <img
+          alt="btn_back"
+          onClick={previousStep}
+          src={`${HOST}/image/btn_back.webp`}
+          className="w-20 absolute bottom-6 right-6 "
+        />
+      ) : null}
     </div>
   );
 };
